@@ -52,7 +52,7 @@ module ApiAuth
     def authentic?(request, secret_key)
       return false if secret_key.nil?
 
-      return md5_match?(request) && signatures_match?(request, secret_key) && valid_request?(request)
+      return md5_match?(request) && signatures_match?(request, secret_key) # && valid_request?(request)
     end
 
     # Returns the access id from the request's authorization header
